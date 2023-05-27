@@ -1,0 +1,39 @@
+{% extends 'blogs/base.html' %}
+{% load static %}
+{% block title %}Fests{% endblock%}
+{% block content %}
+<section class="Events_sw">
+    <h1>Events Hosted By the Association</h1>
+    <p>The Cybernetics Association hosts 3 main events throughout the Academivc year. Check out the details here</p>
+    <div class="row">
+        <div class="eve-col_sw">
+            <a href="{% url 'fest-events' id='multiplexer' %}">
+            <img  src="{% static 'blogs/multiplex1.jpg' %}">
+             <div class="layer_sw">
+                <h3>MULTIPLEXER</h3>
+             </div>
+            </a>
+        </div>
+        <div class="eve-col_sw">
+            <a href="{% url 'fest-events' id='gaming' %}">
+            <img  src="{% static 'blogs/gaming.jpg' %}">
+             <div class="layer_sw">
+                <h3>GAMING EVENT</h3>
+             </div>
+            </a>
+        </div>
+        <div class="eve-col_sw">
+            <a href="{% url 'fest-events' id='syntaxia' %}">
+            <img  src="{% static 'blogs/syntaxia.jpg' %}">
+             <div class="layer_sw">
+                <h3>ANNUAL FLAGSHIP INTERCOLLEGIATE FEST- SYNTAXIA</h3>
+             </div>
+            </a>
+        </div>
+    </div> 
+    <div class="container" style="margin: 2.5%; padding: 2.5%;">
+        <h4>If you want to see all our events at the same place</h4>
+        <a href="{% url 'events-home' %}"><button type="button" class="btn btn-info">Click Here</button></a>
+    </div>
+</section>
+{% endblock %}

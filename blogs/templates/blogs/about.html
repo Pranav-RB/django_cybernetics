@@ -1,0 +1,93 @@
+{% extends 'blogs/base.html' %}
+{% load static %}
+{% block title %}About Us{% endblock %}
+{% block content %}
+<!-------About us content------>
+<section class="about-us_ad">
+    <h2 class="heading_ad"><span>About</span> us </h2>
+    <div class="row_ad">
+        <div class="aboutimg1_ad">
+            <img src="{% static 'blogs/us.JPG' %}">
+        </div>
+        <div class="about-content">
+            <h2>WHO WE ARE</h2>
+            <div class="abcontent_ad">
+                <p> CYBERNETICS is an association founded by the Department
+                    of Computer Science (UG).<br>
+                    It comprises of a team of passionate and organized youth who are
+                    interested in expanding<br> their knowledge as well as their skills.<br>
+                    The objective of the Cybernetics association is to widen
+                    <br> the perspectives of Josephite's and to provide good life.<br>
+                </p>
+            </div>
+            <div class="abt-btn">
+                <a href="{% url 'com-mem' %}" class="btn_ad">Explore more</a>
+            </div>
+        </div>
+
+    </div>
+    <div class="sec_half_ad">
+        <div class="anText_ad ">
+            <h2>Our three motives</h2>
+        </div>
+        <div class="text-row_ad">
+            <div class=in-text-col_ad>
+                <p><b>Learn</b>. Our association is the best association<br>
+                    Our association is the best association.<br></p>
+            </div>
+            <div class=in-text-col_ad>
+                <p><b>Socialize</b>. Our association is the best association<br>
+                    Our association is the best association.<br></p>
+            </div>
+            <div class=in-text-col_ad>
+                <p><b>Code</b>. Our association is the best association<br>
+                    Our association is the best association.<br></p>
+            </div>
+        </div>
+    </div>
+    <div class="image-row_ad">
+        <div class="image-col_ad">
+            <img src="{% static 'blogs/learn.JPG' %}" width="200px">
+        </div>
+        <div class="image-col_ad">
+            <img src="{% static 'blogs/socialise.JPG' %}" width="200px">
+        </div>
+        <div class="image-col_ad">
+            <img src="{% static 'blogs/code.JPG' %}" width="200px">
+        </div>
+    </div>
+    <div class="container_ad">
+        <div class="detailBox_ad">
+            <div class="imgBox">
+                <img src="{% static 'blogs/Fr.Denzil.jpg' %}" alt="">
+            </div>
+            <div class="content">
+                <h2>Fr.Denzil lobo</br>
+                    <span>Director of sjiit</span>
+                </h2>
+            </div>
+
+        </div>
+        <div class="detailBox_ad">
+            <div class="imgBox">
+                <img src="{% static 'blogs/Prashanthi.jpg' %}" alt="">
+            </div>
+            <div class="content">
+                <h2>Dr.prasanthi</br>
+                    <span>PG coordinator</span>
+                </h2>
+            </div>
+        </div>
+        <div class="detailBox_ad">
+            <div class="imgBox">
+                <img src="{% static 'blogs/shashikala.jpg' %}" alt="">
+            </div>
+            <div class="content">
+                <h2>Dr. Shashikala</br>
+                    <span>UG coordinator</span>
+                </h2>
+            </div>
+        </div>
+    </div>
+</section>
+    {% endblock %}

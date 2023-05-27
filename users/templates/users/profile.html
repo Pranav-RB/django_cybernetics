@@ -1,0 +1,46 @@
+{% extends "blogs/base.html" %}
+{% load static %}
+{% block title%} {{ user.first_name }} Profile {% endblock %}
+{% block content %}
+<div class="content-section">
+    <div class="media">
+        <div class="media-body">
+            <h2 class="account-heading">Hello {{ user.first_name }} {{ user.last_name }}</h2>
+            <p class="text-secondary">{{ user.email }}</p>
+            <a href="{% url 'logout' %}"><button type="button" class="btn_user btn btn-info float-right ml-2">Log Out</button></a>
+            <a href="{% url 'user-edit' %}"><button type="button" class="btn_user btn btn-info float-right">Update Account</button></a>
+        </div>
+    </div>
+    <br>
+    {% if user_events %}
+        <h2>Your Current Events:</h2>
+        <div class='containerl'>
+            {% for event in user_events %}
+                <a href="{% url 'single-event' pk=event.event_id %}">
+                    <div class='box1'><img src="gallery5.JPG" alt=""></div>
+                </a>
+                <a href="{% url 'single-event' pk=event.event_id %}">
+                <div class='box2'>
+                    <h3>{{event.event_name}}</h3>
+                    <p>{{event.event_description}}</p>
+                </div>
+                </a>
+                <a href="{% url 'single-event' pk=event.event_id %}">
+                    <div class='box3'>
+                    <div class="datel" style="font-size: large;">
+                        <i class="fa-solid fa-calendar-days fa-lg"></i>
+                        <p>At {{event.event_time}}</p><br>
+                        <p>In {{event.event_location}}</p>
+                    </div>
+                </div>
+                </a>
+                    <div class='box4' style="text-transform: uppercase;">
+                    <a href="{% url 'events-unregister' pk=event.event_id %}"><button type="button" class="btn btn-lg btn-danger">Unregister</button></a>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <h2>You are not registered for any events.</h2>
+    {% endif %}
+<div class="content-section">
+{% endblock %}

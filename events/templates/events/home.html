@@ -1,0 +1,47 @@
+{% extends 'blogs/base.html' %}
+{% load static %}
+{% block title %}Events{% endblock %}
+{% block content %}
+{% if user.is_authenticated %}
+    {% if user.is_superuser %}
+        <a href="{% url 'admin:index' %}"> <button class="btn btn-info">Click here to create and edit events</button> </a>
+    {% endif %}
+{% endif %}
+<div class='containerl'>
+    <div class='box1top'><h1>IMAGES</h1></div>
+    <div class='box2top'>
+        <h1>EVENTS</h1>
+    </div>
+    <div class='box3top'>
+       <h1>TIME & PLACE</h1>
+    </div>
+    <div class='box4top'>
+        <h1>FEST</h1>
+    </div>
+    {% for event in events %}
+    <a href="{% url 'single-event' pk=event.event_id %}">
+        <div class='box1'><img src="{% static 'blogs/'|add:event.img_url %}" alt="{{event.event_na}}"></div>
+    </a>
+    <a href="{% url 'single-event' pk=event.event_id %}">
+    <div class='box2'>
+        <h3>{{event.event_name}}</h3>
+        <p>{{event.event_description}}</p>
+    </div>
+    </a>
+    <a href="{% url 'single-event' pk=event.event_id %}">
+        <div class='box3'>
+        <div class="datel" style="font-size: large;">
+            <i class="fa-solid fa-calendar-days fa-lg"></i>
+            <p>At {{event.event_time}}</p><br>
+            <p>In {{event.event_location}}</p>
+        </div>
+    </div>
+    </a>
+    <a href="{% url 'single-event' pk=event.event_id %}">
+        <div class='box4' style="text-transform: uppercase;">
+        <h1>{{event.fest}}</h1>
+    </div>
+    </a>
+    {% endfor %}
+</div>
+{% endblock %}

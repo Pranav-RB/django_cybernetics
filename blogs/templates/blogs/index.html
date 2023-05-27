@@ -1,0 +1,59 @@
+{% extends 'blogs/base.html' %}
+{% load static %}
+{% block title %}Cybernetics Association SJU{% endblock %}
+{% block content %}
+<section class="header_sw">
+    <div class="text-box_sw">
+        <h1>The Cybernetics Association</h1>
+        <p>The official website of Cybernetics Association of St. Joseph's University</p>
+    </div>
+</section>
+
+
+
+
+
+
+<!-------About us------>
+        <section class="in_sw_Vision">
+            <h1>Vision</h1>
+            <p>The Vision of the Department is to ensure that our students have a deep and analytical understanding of the field and to enable them to use their immense potential to enhance the quality of human life by contributing to the field of Technology , preparing them for their Career in the Industry , and to the needs of the Society with Ethical responsibilities.  </p>
+        </section>
+        <section class="in_sw_About">
+            <h1>About the Association</h1>
+            <img src="{% static 'blogs/cs1.jpg' %}" class="in_sw_com" width="500" height="300"/>
+           <div class="in_sw_row">
+                <div class="in_sw_about-col">
+                    <p>The main purpose of our association is to give computer enthusiasts an opportunity for sharing and augmenting their ideas in the form of fests, activities and seminars thereby boosting their knowledge in the field of fast changing technology. The association aims to inculcate students in the three facets of our motto : learn ,socialize and code by organizing events throughout the year and with this, we strive to enhance their professional skills</p>
+             <a href="{% url 'blogs-about'%}" class="in_sw_btn">Our story</a>
+                </div>
+            </div>
+        </section>
+        <!-------Events------>
+        <section class="in_sw_Events">
+            <h1>Events Hosted By the Association</h1>
+            <p>The Cybernetics Association hosts 3 main events throughout the Academivc year. Check out the details here</p>
+            <div class="in_sw_row">
+                <div class="in_sw_eve-col">
+                <a href="{% url 'fest-events' id='multiplexer' %}">
+                    <img  src="{% static 'blogs/multiplex1.jpg' %}">
+                        <div class="in_sw_layer">
+                            <h3>MULTIPLEXER</h3>
+                        </div>
+                </div>
+                <div class="in_sw_eve-col">
+                <a href="{% url 'fest-events' id='gaming' %}">
+                    <img  src="{% static 'blogs/gaming.jpg' %}">
+                        <div class="in_sw_layer">
+                            <h3>GAMING EVENT</h3>
+                        </div>
+                </div>
+                <div class="in_sw_eve-col">
+                <a href="{% url 'fest-events' id='syntaxia' %}">
+                    <img  src="{% static 'blogs/syntaxia.jpg' %}">
+                        <div class="in_sw_layer">
+                            <h3>ANNUAL FLAGSHIP INTERCOLLEGIATE FEST- SYNTAXIA</h3>
+                        </div>
+                </div>
+            </div>
+{% endblock %}
